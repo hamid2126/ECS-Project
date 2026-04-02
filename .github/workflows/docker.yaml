@@ -27,13 +27,14 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: login to amazon ECR
+        id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: build and push image
         run: |
          docker build -t ecs-app:$IMAGE_TAG ./app
          docker push ${{ steps.login-ecr.outputs.registry }}/ecs-app:$IMAGE_TAG
-         
+
       
     
 
