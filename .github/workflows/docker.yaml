@@ -1,0 +1,39 @@
+name: Build and push Docker image to ecr
+
+on: 
+  workflow_dispatch:
+
+
+env: 
+  AWS_REGION: eu-north-1
+  IMAGE_TAG: ${{ github.sha }}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6.0.0
+        with:
+          role-to-assume: arn:aws:iam::369073369477:role/github-actions-role
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: login to amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: build and push image
+        run: |
+         docker build -t ecs-app:$IMAGE_TAG ./app
+         docker push ${{ steps.login-ecr.outputs.registry }}/ecs-app:$IMAGE_TAG
+         
+      
+    
+
