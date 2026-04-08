@@ -3,16 +3,6 @@ variable "vpc_cidr_block" {
   description = "cidr block for vpc"
   }
 
-variable "enable_dns_hostnames" {
-    type = bool
-    default = false
-}
-
-variable "enable_dns_support" {
-    type = bool
-    default = false
-}
-
 variable "cidr_block_public1" {
   type = string
   description = "cidr block for 1st public subnet"
