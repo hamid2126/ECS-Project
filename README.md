@@ -14,7 +14,7 @@ This project demonstrates a containerised application automatically deployed to 
 ---
 
 ## Architecture Diagram
-
+<img width="1425" height="1054" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/9b482452-568f-4705-954d-561574f98d0c" />
 
 ---
 **Diagram Overview:**
@@ -66,10 +66,12 @@ This project demonstrates a containerised application automatically deployed to 
 - Tearing down the infrastructure through terraform destroy
 ---
 ## Deployment Proof
+<img width="2523" height="1357" alt="Deployed app screenshot" src="https://github.com/user-attachments/assets/2a96e3ee-078f-4936-a2b9-4b50aee501f6" />
 
 
 ---
 ## Pipelines Success Proof
+<img width="1934" height="363" alt="Workflow successful run screenshot" src="https://github.com/user-attachments/assets/a0143a51-d13a-4624-8431-bfd4f28ad3fa" />
 
 
 ---
