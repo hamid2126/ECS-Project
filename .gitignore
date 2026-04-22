@@ -1,4 +1,13 @@
-terraform.tfstate
-.terraform
-.DS_Store
-.env
+*.tfstate
+*.tfstate.*
+**/.terraform/*
+
+
+.env*
+Thumbs.db
+Desktop.ini
+
+.vscode/
+
+*.log
+*.tmp
